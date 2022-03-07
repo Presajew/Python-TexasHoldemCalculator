@@ -13,5 +13,5 @@ class Deck:
     # TODO: implement enums
     def init_cards(self):
         for suit in range(0,4):
-            for value in range(0,13):
+            for value in range(0,14):
                 self.cards.append(Card(suit, value))
