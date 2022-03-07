@@ -10,7 +10,7 @@ class Deck:
     def __init__(self):
         self.init_cards()
 
-    # TODO: implement enums
+
     def init_cards(self):
         for suit in range(0,4):
             for value in range(0,14):
