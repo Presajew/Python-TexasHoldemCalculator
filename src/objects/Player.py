@@ -8,4 +8,4 @@ class Player:
         self.hand = PokerHand()
 
     def __str__(self) -> str:
-        return f'Player: {self.name}\nBank: {self.bank}\nHand: {str(self.hand)}'
+        return f"Player: {self.name}\nBank: {self.bank}\nHand: {str(self.hand)}"

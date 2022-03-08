@@ -10,4 +10,4 @@ class Card:
         self.value = CardValueEnum(value)
 
     def __str__(self) -> str:
-        return f'{self.value.name} of {self.suit.name}'
+        return f"{self.value.name} of {self.suit.name}"

@@ -1,13 +1,13 @@
-class PokerHand:    
+class PokerHand:
     def __init__(self) -> None:
         self.cards = []
 
     def __str__(self) -> str:
-        hand = ''
+        hand = ""
         for card in self.cards:
-            hand += f'{str(card)}'
+            hand += f"{str(card)}"
             if self.cards.index(card) != (len(self.cards) - 1):
-                hand += ', '
+                hand += ", "
         return hand
 
     def put_card_in_hand(self, card) -> None:
