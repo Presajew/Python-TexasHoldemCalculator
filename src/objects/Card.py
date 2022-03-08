@@ -8,3 +8,6 @@ class Card:
     def __init__(self, suit, value):
         self.suit = CardSuitEnum(suit)
         self.value = CardValueEnum(value)
+
+    def __str__(self) -> str:
+        return f'{self.value.name} of {self.suit.name}'
