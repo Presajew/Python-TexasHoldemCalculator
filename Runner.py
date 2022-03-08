@@ -1,4 +1,4 @@
-from src.objects.PokerHand import PokerHand
+from src.objects.Player import Player
 from src.objects.Deck import Deck
 
 
@@ -15,11 +15,11 @@ def main():
     print(str(deck))
 
     # Test dealing 2 cards into a hand
-    hand = PokerHand()
-    hand.put_card_in_hand(deck.deal_one_card()) 
-    hand.put_card_in_hand(deck.deal_one_card())
-    print("\nHand")
-    print(str(hand))
+    player = Player("Dude", 500)
+    player.hand.put_card_in_hand(deck.deal_one_card()) 
+    player.hand.put_card_in_hand(deck.deal_one_card())
+    print("\nPlayer")
+    print(str(player))
     print(f'Deck Size: {len(deck.cards)}')
 
 

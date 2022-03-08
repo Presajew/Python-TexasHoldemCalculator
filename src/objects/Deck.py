@@ -3,9 +3,8 @@ import random
 
 
 class Deck:
-    cards = []
-
-    def __init__(self):
+    def __init__(self) -> None:
+        self.cards = []
         self.init_cards()
 
     def __str__(self) -> str:
@@ -14,13 +13,13 @@ class Deck:
             deck += f'{str(card)}\n'
         return deck
 
-    def init_cards(self):
+    def init_cards(self) -> None:
         ### Generate a base 52 card deck ###
         for suit in range(1,5):
             for value in range(1,14):
                 self.cards.append(Card(suit, value))
 
-    def shuffle(self):
+    def shuffle(self) -> None:
         ### Randomize the order of all cards in deck ###
         random.shuffle(self.cards)
     
