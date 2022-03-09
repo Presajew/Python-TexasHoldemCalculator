@@ -1,26 +1,31 @@
+from src.objects.PokerGame import PokerGame
 from src.objects.Player import Player
 from src.objects.Deck import Deck
 
 
 def main():
 
-    # Simple test to verify Deck object is functional
-    deck = Deck()
-    print(f"\nInit Deck (Size: {len(deck.cards)})")
-    print(str(deck))
+    # Create a game with 6 players
+    game = PokerGame()
+    game.deck.shuffle()
+    for x in range(1, 7):
+        game.add_player(Player(f"Player{x}", 1000))
+    print(str(game))
 
-    # Test the Shuffle Functionality
-    deck.shuffle()
-    print(f"\nShuffle Deck (Size: {len(deck.cards)})")
-    print(str(deck))
+    game.deal_hands()
+    print(str(game))
 
-    # Test dealing 2 cards into a hand
-    player = Player("Dude", 500)
-    player.hand.put_card_in_hand(deck.deal_one_card())
-    player.hand.put_card_in_hand(deck.deal_one_card())
-    print("\nPlayer")
-    print(str(player))
-    print(f"Deck Size: {len(deck.cards)}")
+    game.deal_flop()
+    print(str(game))
+
+    game.deal_river()
+    print(str(game))
+
+    game.deal_turn()
+    print(str(game))
+
+    game.end_round()
+    print(str(game))
 
 
 if __name__ == "__main__":
