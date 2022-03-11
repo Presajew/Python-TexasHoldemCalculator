@@ -4,11 +4,11 @@ from src.objects.Deck import Deck
 
 
 class PokerGame:
-    def __init__(self) -> None:
+    def __init__(self, ante) -> None:
         self.deck = Deck()
         self.players = []
         self.table_cards = PokerHand()
-        self.ante = 50
+        self.ante = ante
 
     def __str__(self) -> str:
         output = "Game Overview\n-------------\n"
