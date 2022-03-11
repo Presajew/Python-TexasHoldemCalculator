@@ -1,3 +1,4 @@
+from src.enums.PlayerType import PlayerType
 from src.objects.PokerGame import PokerGame
 from src.objects.Player import Player
 from src.objects.Deck import Deck
@@ -6,26 +7,18 @@ from src.objects.Deck import Deck
 def main():
 
     # Create a game with 6 players
-    game = PokerGame()
+    game = PokerGame(50)
     game.deck.shuffle()
-    for x in range(1, 7):
-        game.add_player(Player(f"Player{x}", 1000))
+    game.add_player(Player(f"HUMAN", PlayerType.HUMAN, 1000))
+    for x in range(1, 6):
+        game.add_player(Player(f"CPU_{x}", PlayerType.COMPUTER, 1000))
     print(str(game))
 
-    game.deal_hands()
-    print(str(game))
-
-    game.deal_flop()
-    print(str(game))
-
-    game.deal_river()
-    print(str(game))
-
-    game.deal_turn()
-    print(str(game))
-
-    game.end_round()
-    print(str(game))
+    # Loop game until end condition is reached
+    while True:
+        game.play_one_round()
+        if game.is_game_over():
+            break
 
 
 if __name__ == "__main__":
