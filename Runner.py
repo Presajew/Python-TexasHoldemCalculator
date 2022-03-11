@@ -1,7 +1,6 @@
 from src.enums.PlayerType import PlayerType
 from src.objects.PokerGame import PokerGame
 from src.objects.Player import Player
-from src.objects.Deck import Deck
 
 
 def main():
